@@ -4,7 +4,7 @@ export const Contact = () =>{
             <div className = "container">
                 <div className = "contact-contents">
                     <h2>Contactはこちら</h2>
-                    <p className = "description">ご連絡の際はこちらからよろしくお願いします</p>
+                    <p className = "description">ご連絡の際はこちらからお願いします</p>
                     <a href = "https://twitter.com/ryutake459" className = "btn">Contact us</a>
                     </div>
             </div>
