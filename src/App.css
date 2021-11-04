@@ -155,4 +155,6 @@ h3 {
 
 .skill-item {
   margin: 0 48px;
+  text-align: center;
+  position: center;
 }
