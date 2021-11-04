@@ -1,17 +1,20 @@
-import { useEffect,useState } from "react";
+import { useEffect,useReducer } from "react";
 import axios from "axios";
+import { skillReducer,initialState,actionTypes } from "../reducers/skillReducer";
+import { requestStates } from "../constants";
 
 export const Skills = () =>{
-    const[languageList,setLanguagelist]=useState([]);
-    console.log(languageList);
-
+    const[state,dispatch]=useReducer(skillReducer,initialState);
     useEffect(()=>{
+        dispatch({type:actionTypes.fetch});
         axios.get('https://api.github.com/users/take114514/repos')
         .then((response)=>{
-            // プログッラミング言語のデータを取得
-            const languageList = response.data.map(res=>res.language);
-            const contentedLanguageList = generateLanguageCountObj(languageList);
-            setLanguagelist(contentedLanguageList);
+            const languageList = response.date.map(res=>res.language);
+            const countedLanguageList = generateLanguageCountObj(languageList);
+            dispatch({type:actionTypes.success,payload:{languageList:countedLanguageList}});
+        })
+        .catch(()=>{
+            dispatch({type:actionTypes.error});
         });
     },[]);
 
@@ -34,6 +37,16 @@ export const Skills = () =>{
                     <h2>Slills</h2>
                 </div>
                 <div className = "skills-container">
+                    {
+                        state.requestState === requestStates.loading&&(
+                            <p className = "description">取得中...</p>
+                        )
+                    }
+                    {
+                        state.requestState === requestStates.error && (
+                            <p className="description">エラーが発生しました</p>
+                        )
+                    }
                 </div>
             </div>
         </div>
