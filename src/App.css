@@ -1,7 +1,7 @@
 
 body {
-  font-family: system-ui, serif;
-  font-weight: 400;
+  font-family: serif, serif;
+  font-weight: 300;
   font-size: 32px;
   line-height: 1.7;
   color: #110f0f;
@@ -37,7 +37,7 @@ h3 {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(105, 133, 131, 0.9);
+  background: rgba(12, 12, 12, 0.9);
 }
 
 .profile-thumb {
@@ -126,16 +126,18 @@ h3 {
 }
 
 .contact {
- background: #30BFBA;
+ background: #080808;
 }
 
 .contact-contents {
  color: white;
  text-align: center;
+ padding: 35px;
 }
 
 .description {
- font-size: 16px;
+ font-size: 20px;
+ padding: 20px;
 }
 
 .btn {
@@ -150,11 +152,9 @@ h3 {
 #contact .btn {
  height: 54px;
  background: #fff;
- color: #30BFBA;
+ color: #080808;
 }
 
 .skill-item {
-  margin: 0 48px;
-  text-align: center;
-  position: center;
+  margin: auto;
 }
