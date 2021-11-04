@@ -39,4 +39,5 @@ export const useSkills = () => {
   const sortedLanguageList = () => (
     state.languageList.sort((firstLang, nextLang) =>  nextLang.count - firstLang.count)
   )
+  return [sortedLanguageList, state.requestState, converseCountToPercentage];
 }
